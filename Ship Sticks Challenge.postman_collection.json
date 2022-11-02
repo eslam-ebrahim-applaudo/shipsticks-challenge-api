@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "991fc1e7-01b2-45a7-9328-6dae15cce047",
+		"name": "Ship Sticks Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8090134"
+	},
+	"item": [
+		{
+			"name": "List Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": {\r\n        \"name\": \"XL Package\",\r\n        \"type\": \"T Shirts\",\r\n        \"length\": 2,\r\n        \"width\": 3,\r\n        \"height\": 3,\r\n        \"weight\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": {\r\n        \"name\": \"L Package\",\r\n        \"type\": \"Shoes\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "635e38a78d9ebb025fc37493"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "635e3a4c8d9ebb02829644e6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Calculator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/calculator?length=48&width=14&height=12&weight=42",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"calculator"
+					],
+					"query": [
+						{
+							"key": "length",
+							"value": "48"
+						},
+						{
+							"key": "width",
+							"value": "14"
+						},
+						{
+							"key": "height",
+							"value": "12"
+						},
+						{
+							"key": "weight",
+							"value": "42"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api"
+		}
+	]
+}
